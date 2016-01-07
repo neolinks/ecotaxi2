@@ -1,0 +1,35 @@
+<template>
+    <require from="bootstrap/css/bootstrap.css"></require>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <img id="linkhome" src="img/logotip.png" id="eco_logo"/>
+                    <a id="link_to_full" class="white center">перейти на основной сайт</a>
+                </div>
+                <div class="col-md-4">
+                    <require from="./templates/city-switcher"></require>
+                    <city-switcher></city-switcher>
+                </div>
+                <div class="col-md-4">
+                    <require from="./templates/contact-info"></require>
+                    <require from="./templates/login"></require>
+                    <contact-info></contact-info>
+                    <login></login>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="row">
+
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <div class="row">
+
+            </div>
+        </div>
+    </footer>
+</template>

@@ -1,0 +1,8 @@
+<template>
+    <div class="contact_info">
+        <div class="call_phone_img"><img src="img/2.png"/></div>
+        <div class="phone text-left">
+            <p repeat.for="phone of phones"><a class="black" href="tel:${phone.number}">${phone.displayName}</a></p>
+        </div>
+    </div>
+</template>

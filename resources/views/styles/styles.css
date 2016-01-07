@@ -1,0 +1,693 @@
+/*FONT EXO2 BEGIN*/
+
+/* font-family: "Exo2Regular"; */
+@font-face {
+  font-family: "Exo2Regular";
+  src: url("fonts/Exo2/Exo2Regular/Exo2Regular.eot");
+  src: url("fonts/Exo2/Exo2Regular/Exo2Regular.eot?#iefix")format("embedded-opentype"),
+  url("fonts/Exo2/Exo2Regular/Exo2Regular.woff") format("woff"),
+  url("fonts/Exo2/Exo2Regular/Exo2Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+/* font-family: "Exo2Bold"; */
+@font-face {
+  font-family: "Exo2Bold";
+  src: url("fonts/Exo2/Exo2Bold/Exo2Bold.eot");
+  src: url("fonts/Exo2/Exo2Bold/Exo2Bold.eot?#iefix")format("embedded-opentype"),
+  url("fonts/Exo2/Exo2Bold/Exo2Bold.woff") format("woff"),
+  url("fonts/Exo2/Exo2Bold/Exo2Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+/* font-family: "Exo2Light"; */
+@font-face {
+  font-family: "Exo2Light";
+  src: url("fonts/Exo2/Exo2Light/Exo2Light.eot");
+  src: url("fonts/Exo2/Exo2Light/Exo2Light.eot?#iefix")format("embedded-opentype"),
+  url("fonts/Exo2/Exo2Light/Exo2Light.woff") format("woff"),
+  url("fonts/Exo2/Exo2Light/Exo2Light.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+/* font-family: "Exo2BoldItalic"; */
+@font-face {
+  font-family: "Exo2BoldItalic";
+  src: url("fonts/Exo2/Exo2BoldItalic/Exo2BoldItalic.eot");
+  src: url("fonts/Exo2/Exo2BoldItalic/Exo2BoldItalic.eot?#iefix")format("embedded-opentype"),
+  url("fonts/Exo2/Exo2BoldItalic/Exo2BoldItalic.woff") format("woff"),
+  url("fonts/Exo2/Exo2BoldItalic/Exo2BoldItalic.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+/* font-family: "Exo2ExtraBold"; */
+@font-face {
+  font-family: "Exo2ExtraBold";
+  src: url("fonts/Exo2/Exo2ExtraBold/Exo2ExtraBold.eot");
+  src: url("fonts/Exo2/Exo2ExtraBold/Exo2ExtraBold.eot?#iefix")format("embedded-opentype"),
+  url("fonts/Exo2/Exo2ExtraBold/Exo2ExtraBold.woff") format("woff"),
+  url("fonts/Exo2/Exo2ExtraBold/Exo2ExtraBold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+/* font-family: "Exo2ExtraBoldItalic"; */
+@font-face {
+  font-family: "Exo2ExtraBoldItalic";
+  src: url("fonts/Exo2/Exo2ExtraBoldItalic/Exo2ExtraBoldItalic.eot");
+  src: url("fonts/Exo2/Exo2ExtraBoldItalic/Exo2ExtraBoldItalic.eot?#iefix")format("embedded-opentype"),
+  url("fonts/Exo2/Exo2ExtraBoldItalic/Exo2ExtraBoldItalic.woff") format("woff"),
+  url("fonts/Exo2/Exo2ExtraBoldItalic/Exo2ExtraBoldItalic.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+/* font-family: "Exo2ExtraLight"; */
+@font-face {
+  font-family: "Exo2ExtraLight";
+  src: url("fonts/Exo2/Exo2ExtraLight/Exo2ExtraLight.eot");
+  src: url("fonts/Exo2/Exo2ExtraLight/Exo2ExtraLight.eot?#iefix")format("embedded-opentype"),
+  url("fonts/Exo2/Exo2ExtraLight/Exo2ExtraLight.woff") format("woff"),
+  url("fonts/Exo2/Exo2ExtraLight/Exo2ExtraLight.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+/* font-family: "Exo2ExtraLightItalic"; */
+@font-face {
+  font-family: "Exo2ExtraLightItalic";
+  src: url("fonts/Exo2/Exo2ExtraLightItalic/Exo2ExtraLightItalic.eot");
+  src: url("fonts/Exo2/Exo2ExtraLightItalic/Exo2ExtraLightItalic.eot?#iefix")format("embedded-opentype"),
+  url("fonts/Exo2/Exo2ExtraLightItalic/Exo2ExtraLightItalic.woff") format("woff"),
+  url("fonts/Exo2/Exo2ExtraLightItalic/Exo2ExtraLightItalic.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+/* font-family: "Exo2Italic"; */
+@font-face {
+  font-family: "Exo2Italic";
+  src: url("fonts/Exo2/Exo2Italic/Exo2Italic.eot");
+  src: url("fonts/Exo2/Exo2Italic/Exo2Italic.eot?#iefix")format("embedded-opentype"),
+  url("fonts/Exo2/Exo2Italic/Exo2Italic.woff") format("woff"),
+  url("fonts/Exo2/Exo2Italic/Exo2Italic.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+/* font-family: "Exo2BlackItalic"; */
+@font-face {
+  font-family: "Exo2BlackItalic";
+  src: url("fonts/Exo2/Exo2BlackItalic/Exo2BlackItalic.eot");
+  src: url("fonts/Exo2/Exo2BlackItalic/Exo2BlackItalic.eot?#iefix")format("embedded-opentype"),
+  url("fonts/Exo2/Exo2BlackItalic/Exo2BlackItalic.woff") format("woff"),
+  url("fonts/Exo2/Exo2BlackItalic/Exo2BlackItalic.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+/* font-family: "Exo2LightItalic"; */
+@font-face {
+  font-family: "Exo2LightItalic";
+  src: url("fonts/Exo2/Exo2LightItalic/Exo2LightItalic.eot");
+  src: url("fonts/Exo2/Exo2LightItalic/Exo2LightItalic.eot?#iefix")format("embedded-opentype"),
+  url("fonts/Exo2/Exo2LightItalic/Exo2LightItalic.woff") format("woff"),
+  url("fonts/Exo2/Exo2LightItalic/Exo2LightItalic.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+/* font-family: "Exo2Medium"; */
+@font-face {
+  font-family: "Exo2Medium";
+  src: url("fonts/Exo2/Exo2Medium/Exo2Medium.eot");
+  src: url("fonts/Exo2/Exo2Medium/Exo2Medium.eot?#iefix")format("embedded-opentype"),
+  url("fonts/Exo2/Exo2Medium/Exo2Medium.woff") format("woff"),
+  url("fonts/Exo2/Exo2Medium/Exo2Medium.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+/* font-family: "Exo2MediumItalic"; */
+@font-face {
+  font-family: "Exo2MediumItalic";
+  src: url("fonts/Exo2/Exo2MediumItalic/Exo2MediumItalic.eot");
+  src: url("fonts/Exo2/Exo2MediumItalic/Exo2MediumItalic.eot?#iefix")format("embedded-opentype"),
+  url("fonts/Exo2/Exo2MediumItalic/Exo2MediumItalic.woff") format("woff"),
+  url("fonts/Exo2/Exo2MediumItalic/Exo2MediumItalic.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+/* font-family: "Exo2Black"; */
+@font-face {
+  font-family: "Exo2Black";
+  src: url("fonts/Exo2/Exo2Black/Exo2Black.eot");
+  src: url("fonts/Exo2/Exo2Black/Exo2Black.eot?#iefix")format("embedded-opentype"),
+  url("fonts/Exo2/Exo2Black/Exo2Black.woff") format("woff"),
+  url("fonts/Exo2/Exo2Black/Exo2Black.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+/* font-family: "Exo2SemiBold"; */
+@font-face {
+  font-family: "Exo2SemiBold";
+  src: url("fonts/Exo2/Exo2SemiBold/Exo2SemiBold.eot");
+  src: url("fonts/Exo2/Exo2SemiBold/Exo2SemiBold.eot?#iefix")format("embedded-opentype"),
+  url("fonts/Exo2/Exo2SemiBold/Exo2SemiBold.woff") format("woff"),
+  url("fonts/Exo2/Exo2SemiBold/Exo2SemiBold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+/* font-family: "Exo2SemiBoldItalic"; */
+@font-face {
+  font-family: "Exo2SemiBoldItalic";
+  src: url("fonts/Exo2/Exo2SemiBoldItalic/Exo2SemiBoldItalic.eot");
+  src: url("fonts/Exo2/Exo2SemiBoldItalic/Exo2SemiBoldItalic.eot?#iefix")format("embedded-opentype"),
+  url("fonts/Exo2/Exo2SemiBoldItalic/Exo2SemiBoldItalic.woff") format("woff"),
+  url("fonts/Exo2/Exo2SemiBoldItalic/Exo2SemiBoldItalic.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+/* font-family: "Exo2Thin"; */
+@font-face {
+  font-family: "Exo2Thin";
+  src: url("fonts/Exo2/Exo2Thin/Exo2Thin.eot");
+  src: url("fonts/Exo2/Exo2Thin/Exo2Thin.eot?#iefix")format("embedded-opentype"),
+  url("fonts/Exo2/Exo2Thin/Exo2Thin.woff") format("woff"),
+  url("fonts/Exo2/Exo2Thin/Exo2Thin.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+/* font-family: "Exo2ThinItalic"; */
+@font-face {
+  font-family: "Exo2ThinItalic";
+  src: url("fonts/Exo2/Exo2ThinItalic/Exo2ThinItalic.eot");
+  src: url("fonts/Exo2/Exo2ThinItalic/Exo2ThinItalic.eot?#iefix")format("embedded-opentype"),
+  url("fonts/Exo2/Exo2ThinItalic/Exo2ThinItalic.woff") format("woff"),
+  url("fonts/Exo2/Exo2ThinItalic/Exo2ThinItalic.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+/*FONT EXO2 END*/
+body {
+  margin: 0;
+}
+
+.splash {
+  text-align: center;
+  margin: 10% 0 0 0;
+  box-sizing: border-box;
+}
+
+.splash .message {
+  font-size: 72px;
+  line-height: 72px;
+  text-shadow: rgba(0, 0, 0, 0.5) 0 0 15px;
+  text-transform: uppercase;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.splash .fa-spinner {
+  text-align: center;
+  display: inline-block;
+  font-size: 72px;
+  margin-top: 50px;
+}
+
+.page-host {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50px;
+  bottom: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+@media print {
+  .page-host {
+    position: absolute;
+    left: 10px;
+    right: 0;
+    top: 50px;
+    bottom: 0;
+    overflow-y: inherit;
+    overflow-x: inherit;
+  }
+}
+
+section {
+  margin: 0 20px;
+}
+
+.navbar-nav li.loader {
+  margin: 12px 24px 0 6px;
+}
+
+.pictureDetail {
+  max-width: 425px;
+}
+
+/* animate page transitions */
+section.au-enter-active {
+  -webkit-animation: fadeInRight 1s;
+  animation: fadeInRight 1s;
+}
+
+div.au-stagger {
+  /* 50ms will be applied between each successive enter operation */
+  -webkit-animation-delay: 50ms;
+  animation-delay: 50ms;
+}
+
+.card-container.au-enter {
+  opacity: 0 !important;
+}
+
+.card-container.au-enter-active {
+  -webkit-animation: fadeIn 2s;
+  animation: fadeIn 2s;
+}
+
+.card {
+  overflow: hidden;
+  position: relative;
+  border: 1px solid #CCC;
+  border-radius: 8px;
+  text-align: center;
+  padding: 0;
+  background-color: #337ab7;
+  color: rgb(136, 172, 217);
+  margin-bottom: 32px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+}
+
+.card .content {
+  margin-top: 10px;
+}
+
+.card .content .name {
+  color: white;
+  text-shadow: 0 0 6px rgba(0, 0, 0, .5);
+  font-size: 18px;
+}
+
+.card .header-bg {
+  /* This stretches the canvas across the entire hero unit */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  border-bottom: 1px #FFF solid;
+  border-radius: 6px 6px 0 0;
+}
+
+.card .avatar {
+  position: relative;
+  margin-top: 15px;
+  z-index: 100;
+}
+
+.card .avatar img {
+  width: 100px;
+  height: 100px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  border: 2px #FFF solid;
+}
+
+/* animation definitions */
+@-webkit-keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0)
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+    -ms-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0)
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/*
+BEGIN OF STYLE CSS
+*/
+html, body{
+  font-family: 'Exo2Regular'!important;
+  padding: 0;
+  margin: 0;
+}
+.bold{
+  font-family: 'Exo2Bold' !important;
+}
+.wrapper{
+  width: 1200px;
+  margin: 0px auto;
+}
+.white{
+  color: #fff !important;
+}
+.red{
+  color: red !important;
+}
+.text-large{
+  font-size: large !important;
+}
+.black{
+  color: #000 !important;
+}
+.grey{
+  color:rgb(188, 190, 192);
+}
+.right_float{
+  float: right !important;
+}
+.clear_none{
+  clear: none;
+}
+/*End of template styles*/
+
+/*Begin of header*/
+.switcher_wrapper{
+  padding-left: 10% !important;
+}
+.center{
+  text-align: center;
+}
+.city-switcher{
+  margin-top: 70px;
+}
+.login{
+  text-decoration: none;
+  background-color:rgb(46, 148, 65);
+  border-radius:15px;
+  margin-top:10px;
+  padding: 2px 12px;
+  float:left;
+  color:#fff;
+  font-size:20px;
+  float: right;
+}
+.logo {
+  float: left;
+}
+.contact_info{
+  margin-top:20px;
+  float: right;
+}
+
+.contacts {
+  width: 35%;
+  margin-top:30px;
+  float: right;
+}
+#linkhome{
+  margin-top:20px;
+}
+#link_to_full{
+  background-color: #2E9340;
+  padding: 0 18px 4px 18px;
+  border-radius: 15px;
+  display: inline-block;
+  position: absolute;
+  top: 95px;
+  left: 135px;
+
+}
+
+/*City switcher*/
+.toggle-btn-grp {
+  margin:70px 0 3px 60px;
+}
+label.toggle-btn{
+  color: #BCBEC0;
+  font-family: 'Exo2Regular';
+  font-size: 1.2em;
+  font-weight: 100;
+}
+label.toggle-btn.success{
+  color: #fff;
+}
+.toggle-btn {
+  text-align:center;
+  margin:5px 2px;
+  padding:0.4em 3em;
+  color:#000;
+  background-color:#FFF;
+  border-radius:10px;
+  display:inline-block;
+  border:solid 2px #2E9441;
+  cursor:pointer;
+}
+
+.toggle-btn-grp.joint-toggle .toggle-btn {
+  margin:5px 0;
+  padding:0.4em 2em;
+  border-radius:0;
+  border-right-color:white;
+}
+.toggle-btn-grp.joint-toggle .toggle-btn:first-child {
+  margin-left:2px;
+  border-radius: 15px 0px 0px 15px;
+}
+.toggle-btn-grp.joint-toggle .toggle-btn:last-child {
+  margin-right:2px;
+  border-radius: 0px 15px 15px 0px;
+  border-right:solid 2px #2E9441;
+}
+.toggle-btn.success {
+  background:#2E9441;
+  border:solid 2px #2E9441 !important;
+}
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+/*end city switcher*/
+.call_phone_img {
+  float: left;
+}
+.call_phone_img img{
+  width:60px;
+  margin-top:20px;
+  display: inline;
+}
+.phone{
+  margin-left: 10px;
+  margin-top: 30px;
+  float: left;
+}
+.phone p{
+  font-size: 30px;
+  line-height: 14px;
+}
+.phone p a {
+  text-decoration: none;
+
+  font-family: "Exo2Bold";
+}
+.close img{
+  width: 30px !important;
+}
+#loginModal .modal-body form input{
+  height: 40px;
+  border-radius: 10px;
+  border: 3px solid #2D9133;
+}
+#loginModal .modal-body form button{
+  font-size: 1.6em;
+  border-radius: 15px;
+}
+/*Content starts here*/
+.content{
+  border: 7px solid #F4AE12;
+  border-radius: 35px;
+  background-color:#2D9242;
+  clear: both;
+}
+.route_info{
+  margin:57px 0 0 57px
+}
+.route_info img{
+  margin-top:-23px;
+}
+.empty_block{
+  float: left;
+  width: 50px;
+  height: 130px;
+  border-left: 3px dashed #FFFFFF;
+  border-top: 3px dashed #FFFFFF;
+  border-bottom: 3px dashed #FFFFFF;
+}
+
+.white-bg{
+  background-color: #fff;
+  border-radius: 10px;
+  text-align: center;
+  padding :4px 0;
+  margin: 25px 0px 0 -37px;
+  font-weight: 600;
+}
+.adresses {
+  margin-right: 0px;
+  margin-top:20px;
+}
+.adresses label{
+  font-size: 18px;
+  font-weight: bold;
+  display: inline;
+}
+
+.dest{
+  margin-top:60px;
+}
+.znaki{
+  margin-right: -71px;
+  float: right;
+}
+#samolet1{
+  padding-right: 5px;
+}
+.depart input[type="text"],.dest input[type="text"]{
+  width: 298px;
+  float: left;
+  height: 40px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  font-size: 17px;
+  border:none;
+  padding: 2px 5px;
+}
+.clear_depart,.clear_dest{
+  width: 82px !important;
+  vertical-align: center;
+  background-color: #fff;
+  height: 40px;
+  padding-top: 3px;
+  border-left: 3px solid #d3d3d3;
+  float: left;
+  padding: 0 !important;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.clear_depart p,.clear_dest p{
+  padding: 5px;
+  font-size: 16px;
+  float: left;
+}
+.clear_dest img, .clear_depart img{
+  padding-top: 5px;
+}
+.placemark1,.placemark2{
+  padding-left: 0 !important;
+}
+.row.cars_info{
+  border-top: 3px dashed #fff;
+  margin-left: 10px !important;
+}
+.cars_info h2{
+  font-size: 1.5em;
+  font-weight: bold;
+}
+.cars_info h4{
+  padding-top: 10px;
+  font-family: 'Exo2Regular';
+  font-weight: bold;
+  font-size: 22px;
+}
+.cars_info p{
+  padding: 6px 0;
+  margin-bottom: 0px;
+  font-size: 18px;
+}
+.cars_info img{
+  width: 90%;
+  margin: 5px 5px;
+}
+.car_img_wrapper{
+  margin-top: 20px;
+  height: 160px;
+}
+p.price {
+  font-weight: bold;
+  font-size: 26px;
+}
+.abs{
+  cursor: pointer;
+}
+.selected .abs{
+  border-top-right-radius:10px;
+  border-top-left-radius:10px;
+  background-color: #fff;
+}
+.selected h4{
+  color: rgb(45, 146, 63) !important;
+}
+.selected .abs p{
+  color: rgb(45, 146, 63) !important;
+}
+.selected .price{
+  background:rgb(244, 174, 10);
+  border-bottom-right-radius:10px;
+  border-bottom-left-radius:10px;
+}
+.add_info{
+  margin-top: 40px !important;
+  border-top: 4px dashed #fff;
+  border-bottom: 4px dashed #fff;
+}
+.add_info h3{
+  font-family: 'Exo2Regular' !important;
+  color:#fff;
+  font-weight: 600;
+  display: inline-block;
+  font-size: 1.5em;
+  margin-top: 20px;
+  margin-left: 10px;
+}
+.add_info img{
+  margin-bottom: 8px;
+}

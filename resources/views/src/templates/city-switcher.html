@@ -1,0 +1,12 @@
+<template>
+    <div class="toggle-btn-grp joint-toggle">
+        <label repeat.for="city of cities" class="toggle-btn ${$parent.selectedCity == city.name ? 'success' : ''}">
+            <input type="radio" class="visuallyhidden"
+                   checked.bind="$parent.selectedCity"
+                   model.bind="city.name"
+                   click.trigger="changeCity(city.name)"
+            />
+            ${city.displayName}
+        </label>
+    </div>
+</template>
