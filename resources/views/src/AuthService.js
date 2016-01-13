@@ -1,17 +1,20 @@
 import {inject, Aurelia} from 'aurelia-framework';
 import {HttpClient, json} from 'aurelia-fetch-client';
 import {Cookie} from 'aurelia-cookie';
+import {User} from 'model/User';
 import config from 'config';
+import 'bootstrap';
 
-@inject(Aurelia, HttpClient)
+@inject(Aurelia, HttpClient,User)
 export class AuthService{
-    client;
-    constructor(Aurelia, HttpClient){
+
+    constructor(Aurelia, HttpClient,User){
         HttpClient.configure(http =>{
            http.withBaseUrl(config.baseUrl);
         });
         this.http = HttpClient;
         this.app = Aurelia;
+        this.user = User;
         this.session = JSON.parse(localStorage[config.tokenName] || null);
     }
 
@@ -23,11 +26,13 @@ export class AuthService{
                 body : json({login : username, password : password, local_password : local_password, city : city})
             })
             .then((response) => response.json())
-            .then((client) => client)
-            .then((session)  => {
-                if(session){
-                    localStorage[config.tokenName] = JSON.stringify(session.token);
-                    this.session = session;
+            .then((client) => {
+                if(client){
+                    this.user = client;
+                    localStorage[config.tokenName] = JSON.stringify(client.token);
+                    this.session = client.token;
+                    console.log(this.session);
+                    console.log(this.user);
                     this.app.setRoot('ecotaxi-personal');
                 }else{
 

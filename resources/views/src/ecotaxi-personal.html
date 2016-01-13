@@ -19,8 +19,12 @@
         </div>
     </header>
     <div class="container">
-        <div class="row">
-            <router-view></router-view>
+        <div class="row main-wrapper">
+            <div class="personal-wrapper">
+                <require from='./templates/nav-bar'></require>
+                <nav-bar router.bind="router"></nav-bar>
+                <router-view></router-view>
+            </div>
         </div>
     </div>
     <footer>

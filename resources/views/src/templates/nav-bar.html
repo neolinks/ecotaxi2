@@ -1,0 +1,10 @@
+<template>
+    <nav>
+        <ul class="nav navbar-nav custom-navbar center">
+            <li repeat.for="row of router.navigation">
+
+                <a class="navbar-href" href.bind="row.href"><img src.bind="row.isActive ? row.settings.actImg : row.settings.img"/><br/>${row.title}</a>
+            </li>
+        </ul>
+    </nav>
+</template>

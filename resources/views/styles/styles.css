@@ -535,13 +535,29 @@ label.toggle-btn.success{
 #loginModal .modal-body form input{
   height: 40px;
   border-radius: 10px;
-  border: 3px solid #2D9133;
+  border: 3px solid #2D9242;
 }
 #loginModal .modal-body form button{
   font-size: 1.6em;
   border-radius: 15px;
 }
 /*Content starts here*/
+.main-wrapper{
+  border:7px solid #F4AE12;
+  border-radius: 35px;
+  background-color: #2D9242;
+}
+.custom-navbar.custom-navbar{
+  margin: 0 210px;
+}
+.navbar-href{
+  color:#fff;
+  font-size:1.1em;
+  /*font-family: 'Exo2Regular';*/
+}
+
+
+/*CONTENT ENDS HERE*/
 .content{
   border: 7px solid #F4AE12;
   border-radius: 35px;
