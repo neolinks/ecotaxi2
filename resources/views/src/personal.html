@@ -2,63 +2,34 @@
     <div class="personal-page">
         <div class="col-md-6">
             <form class="form-horizontal">
-                <div class="col-md-12 shortcuts">
-                    <div class="col-md-1 col-md-offset-9 airport"><a href="#"><img src="img/8.png"></a></div>
-                    <div class="col-md-1 train dropdown">
-                        <a href="#" mouseover.trigger="dropdown()">
-                            <img src="img/9.png">
-                        </a>
-                        <ul class="dropdown-menu" mouseover.trigger="dropdown()" mouseout.trigger="close()">
-                            <li>Алматы 1</li>
-                            <li>Алматы 2</li>
-                        </ul>
+                <div class="col-md-12" repeat.for="param of orderParams">
+                    <div class="col-md-12 shortcuts" if.bind="$index < 2">
+                        <div class="col-md-1 col-md-offset-9 airport"><a><img src="img/8.png"></a></div>
+                        <div class="col-md-1 train dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                <img src="img/9.png">
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>Алматы 1</li>
+                                <li>Алматы 2</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="${param.name}" class="control-label col-md-4">${param.displayName}</label>
+                        <input class="form-control col-md-12" type="text" placeholder="${param.displayName}" id="${param.name}" value.bind="param.value"/>
                     </div>
                 </div>
                 <div class="form-group col-md-12">
-                    <label for="source-address" class="control-label col-md-4">Адрес подачи</label>
-                    <input class="form-control col-md-12" type="text" placeholder="Адрес подачи" id="source-address"/>
-                </div>
-                <div class="col-md-12 shortcuts">
-                    <div class="col-md-1 col-md-offset-9 airport"><a href="#"><img src="img/8.png"></a></div>
-                    <div class="col-md-1 train dropdown">
-                        <a href="#" mouseover.trigger="dropdown()">
-                            <img src="img/9.png">
-                        </a>
-                        <ul class="dropdown-menu" mouseover.trigger="dropdown()" mouseout.trigger="close()">
-                            <li>Алматы 1</li>
-                            <li>Алматы 2</li>
-                        </ul>
+                    <div class="col-md-2 clear-order" click.trigger="clear()"><img src="/img/5.png"/></div>
+                    <div class="col-md-10 center-block">
+                        <button type="submit" class="submit-order">Заказать</button>
                     </div>
                 </div>
-                <div class="form-group col-md-12">
-                    <label for="dest-address" class="control-label col-md-4">Адрес назначения</label>
-                    <input class="form-control col-md-12" type="text" placeholder="Адрес назначения" id="dest-address"/>
-                </div>
-                <div class="form-group col-md-12">
-                    <label for="source-time" class="control-label col-md-4">Время подачи</label>
-                    <input class="form-control col-md-12" type="text" placeholder="Время подачи" id="source-time"/>
-                </div>
-                <div class="form-group col-md-12">
-                    <label for="phone" class="control-label col-md-4">Телефон</label>
-                    <input class="form-control col-md-12" type="text" placeholder="Телефон" id="phone"/>
-                </div>
-                <div class="form-group col-md-12">
-                    <label for="passenger" class="control-label col-md-4">Пассажир</label>
-                    <input class="form-control col-md-12" type="text" placeholder="Пассажир" id="passenger"/>
-                </div>
-                <div class="form-group col-md-12">
-                    <label for="comment" class="control-label col-md-4">Комментарий</label>
-                    <input class="form-control col-md-12" type="text" placeholder="Комментарий" id="comment"/>
-                </div>
-
             </form>
         </div>
         <div class="col-md-6">
             <h1>YMAP</h1>
         </div>
     </div>
-
-    <script>
-
-    </script>
 </template>

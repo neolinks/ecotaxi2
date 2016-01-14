@@ -560,42 +560,67 @@ label.toggle-btn.success{
   margin: 0 auto;
 }
 
-.personal-page > div > form > .form-group{
+.personal-page > div > form > div > .form-group{
   padding:0;
   background-color: #fff;
   border-radius: 6px;
 }
-.personal-page > div > form > .form-group > label{
-  font: bold 16px 'Exo2Regular';
+.personal-page > div > form > div > .form-group > label{
+  font: bold 15px 'Exo2Regular';
   padding-top: 10px;
   padding-right: 0;
   color:#2D9133;
   text-align: left;
 }
-.personal-page > div > form > .form-group > input{
-  width: 66%;
+.personal-page > div > form > div > .form-group > input{
+  width: 65%;
   font: normal 16px 'Exo2Regular';
   height: 40px;
   border:none;
 }
 
-.shortcuts > .train{
+.shortcuts  .train{
   margin-left:10px;
 }
+.shortcuts a{
+  cursor: pointer;
+}
+
+.open > .dropdown-menu{
+  border-radius: 20px;
+}
 .dropdown-menu{
-  width: 60px;
-  border:4px solid #2D9133;
+  min-width: 100px !important;
+  border:2px solid #2D9133 !important;
 }
 .dropdown-menu li{
   text-align: center;
+  margin: 5px 0;
   color: #2D9242;
   cursor: pointer;
-  font: bold 18px 'Exo2Regular';
+  width: 100px;
+  text-align: center;
+  font: bold 17px 'Exo2Regular';
 }
 .dropdown-menu li:hover{
   text-decoration: underline;
 }
-
+.clear-order{
+  cursor: pointer;
+}
+.submit-order{
+  color: #185826;
+  background-color: #fff;
+  font:bold 24px 'Exo2Regular';
+  padding: 10px 45px;
+  border-radius: 20px;
+  border:none;
+  margin-left: 55px;
+  margin-top: 3px;
+}
+.submit-order:hover{
+  text-decoration: underline;
+}
 /*CONTENT ENDS HERE*/
 .content{
   border: 7px solid #F4AE12;
