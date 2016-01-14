@@ -27,6 +27,7 @@ export class AuthService{
             })
             .then((response) => response.json())
             .then((client) => {
+                console.log(client);
                 if(client){
                     this.user = client;
                     localStorage[config.tokenName] = JSON.stringify(client.token);
@@ -35,7 +36,8 @@ export class AuthService{
                     console.log(this.user);
                     this.app.setRoot('ecotaxi-personal');
                 }else{
-
+                    console.log('Auth error');
+                    return 'Неправильный логин или пароль';
                 }
             });
     }

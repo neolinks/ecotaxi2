@@ -548,14 +548,53 @@ label.toggle-btn.success{
   background-color: #2D9242;
 }
 .custom-navbar.custom-navbar{
-  margin: 0 210px;
+  margin: 0 170px;
 }
 .navbar-href{
   color:#fff;
   font-size:1.1em;
   /*font-family: 'Exo2Regular';*/
 }
+.personal-page{
+  width: 1000px;
+  margin: 0 auto;
+}
 
+.personal-page > div > form > .form-group{
+  padding:0;
+  background-color: #fff;
+  border-radius: 6px;
+}
+.personal-page > div > form > .form-group > label{
+  font: bold 16px 'Exo2Regular';
+  padding-top: 10px;
+  padding-right: 0;
+  color:#2D9133;
+  text-align: left;
+}
+.personal-page > div > form > .form-group > input{
+  width: 66%;
+  font: normal 16px 'Exo2Regular';
+  height: 40px;
+  border:none;
+}
+
+.shortcuts > .train{
+  margin-left:10px;
+}
+.dropdown-menu{
+  width: 60px;
+  border:4px solid #2D9133;
+}
+.dropdown-menu li{
+  text-align: center;
+  color: #2D9242;
+  cursor: pointer;
+  font: bold 18px 'Exo2Regular';
+}
+.dropdown-menu li:hover{
+  text-decoration: underline;
+}
 
 /*CONTENT ENDS HERE*/
 .content{

@@ -22,6 +22,7 @@ class ApiController extends Controller{
     $local_password = $request->input('local_password');
     $city = $request->get('city');
     $authenticate = $this->tm->check_authorization($login,$password,$local_password);
+    return json_encode($authenticate);
     if($authenticate){
       $client = new \stdClass();
       $client->id = $authenticate->client_id;
