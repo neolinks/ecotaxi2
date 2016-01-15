@@ -560,19 +560,19 @@ label.toggle-btn.success{
   margin: 0 auto;
 }
 
-.personal-page > div > form > div > .form-group{
+.personal-page > div > form > .form-group{
   padding:0;
   background-color: #fff;
   border-radius: 6px;
 }
-.personal-page > div > form > div > .form-group > label{
+.personal-page > div > form > .form-group > label{
   font: bold 15px 'Exo2Regular';
   padding-top: 10px;
   padding-right: 0;
   color:#2D9133;
   text-align: left;
 }
-.personal-page > div > form > div > .form-group > input{
+.personal-page > div > form > .form-group > input{
   width: 65%;
   font: normal 16px 'Exo2Regular';
   height: 40px;
@@ -620,6 +620,9 @@ label.toggle-btn.success{
 }
 .submit-order:hover{
   text-decoration: underline;
+}
+#YMapsID{
+  margin-top: 25px;
 }
 /*CONTENT ENDS HERE*/
 .content{
