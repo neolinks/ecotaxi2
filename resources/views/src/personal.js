@@ -1,17 +1,15 @@
 import {inject} from 'aurelia-framework';
 import {HttpClient} from 'aurelia-fetch-client';
-import {YandexMaps} from 'YandexMaps';
+import {YandexMap} from 'yandex-map';
 import {ObserverLocator} from 'aurelia-framework';
 import 'fetch';
 import 'bootstrap';
-@inject(HttpClient,ObserverLocator)
+@inject(HttpClient,ObserverLocator,YandexMap)
 export class Personal{
-        sourceAddress = '';
-        destAddress = '';
-        sourceTime = '';
-        phone = '';
-        passenger= '';
-        comment = '';
+
+
+    //get sourceAddress(){return this.sourceAddress}
+    //set sourceAddress(sourceAddress){this.sourceAddress = sourceAddress}
     //orderParams =[
     //     {name : 'source-address', displayName : 'Адрес подачи', value : this.sourceAddress},
     //     {name : 'dest-adress', displayName : 'Адрес назначения', value : this.destAddress},
@@ -28,30 +26,58 @@ export class Personal{
     //    passanger: {name: 'passenger', displayName: 'Пассажир', value: ''},
     //    comment: {name: 'comment', displayName: 'Комментарий', value: ''}
     //};
-    constructor(HttpClient,ObserverLocator){
+    constructor(HttpClient,ObserverLocator,YandexMap){
         this.http = HttpClient;
         this.observerLocator = ObserverLocator;
-        let sourceDispose = this.observerLocator
-            .getObserver(this, 'sourceAddress')
-            .subscribe(this.sourceAddressGeocode);
-        let destDispose = this.observerLocator
-            .getObserver(this, 'destAddress')
-            .subscribe(this.destAddressGeocode);
-        YandexMaps.init();
-    }
-    sourceAddressGeocode(newValue,oldValue){
-        YandexMaps.geoCode(1,newValue);
-    }
-    destAddressGeocode(newValue,oldValue){
-        YandexMaps.geoCode(2,newValue);
-    }
-    activate(){
-       // this.sourceAddress ='';
+        this.map = YandexMap;
+        this.subscription = [];
+        this.sourceAddress ='';
         this.destAddress ='';
         this.sourceTime ='';
-        this.phone='';
-        this.passenger='';
+        this.phone ='';
+        this.passenger ='';
         this.comment = '';
-        YandexMaps.clear();
+    }
+    activate(){
+        this.subscription.push(
+            this.observerLocator.getObserver(this,'sourceAddress').subscribe(
+                (newValue,oldValue) => {
+                    if(newValue.length == 0){
+                        return false;
+                    }else if(newValue !== oldValue){
+                        YandexMap.reverseGeocode(1,newValue).then((response) =>{
+                            this.sourceAddress = response.geoObjects.get(0).properties.get('name');
+                            YandexMap.setPlacemark(1,response.geoObjects.get(0).geometry.getCoordinates());
+                        });
+                    }
+                }
+            )
+        );
+        this.subscription.push(
+            this.observerLocator.getObserver(this, 'destAddress').subscribe(
+                (newValue,oldValue) => {
+                    if(newValue.length == 0){
+                        return false;
+                    }else if(newValue !== oldValue){
+                        YandexMap.reverseGeocode(2,newValue).then((response) =>{
+                            this.destAddress = response.geoObjects.get(0).properties.get('name');
+                            YandexMap.setPlacemark(2,response.geoObjects.get(0).geometry.getCoordinates());
+                        });
+                    }
+                }
+            )
+        );
+    }
+    clearForm(){
+        this.sourceAddress ='';
+        this.destAddress ='';
+        this.sourceTime ='';
+        this.phone ='';
+        this.passenger ='';
+        this.comment = '';
+        YandexMap.removePlacemark(0);
+    }
+    deactivate () {
+        while (this.subscriptions.length) { this.subscriptions.pop()(); }
     }
 }

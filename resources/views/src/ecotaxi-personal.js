@@ -1,5 +1,6 @@
 import {User} from 'model/User';
 import {inject} from 'aurelia-framework';
+import  $ from 'jquery';
 
 @inject(User)
 export class EcotaxiPersonal{
