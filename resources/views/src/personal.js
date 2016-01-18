@@ -42,7 +42,8 @@ export class Personal{
         this.subscription.push(
             this.observerLocator.getObserver(this,'sourceAddress').subscribe(
                 (newValue,oldValue) => {
-                    if(newValue.length == 0){
+                    if(newValue == null){
+                        YandexMap.removePlacemark(1);
                         return false;
                     }else if(newValue !== oldValue){
                         YandexMap.reverseGeocode(1,newValue).then((response) =>{
@@ -56,13 +57,40 @@ export class Personal{
         this.subscription.push(
             this.observerLocator.getObserver(this, 'destAddress').subscribe(
                 (newValue,oldValue) => {
-                    if(newValue.length == 0){
+                    if(newValue == null){
+                        YandexMap.removePlacemark(2);
                         return false;
                     }else if(newValue !== oldValue){
                         YandexMap.reverseGeocode(2,newValue).then((response) =>{
                             this.destAddress = response.geoObjects.get(0).properties.get('name');
                             YandexMap.setPlacemark(2,response.geoObjects.get(0).geometry.getCoordinates());
                         });
+                    }
+                }
+            )
+        );
+        this.subscription.push(
+            this.observerLocator.getObserver(YandexMap,'sourceCoords').subscribe(
+                (newValue,oldValue) => {
+                   if(YandexMap.sourceCoords == null){
+                       return false;
+                   }else if(YandexMap.destCoords == null){
+                       return false;
+                   }else{
+                       YandexMap.calculateRoute();
+                   }
+                }
+            )
+        );
+        this.subscription.push(
+            this.observerLocator.getObserver(YandexMap,'destCoords').subscribe(
+                (newValue,oldValue) => {
+                    if(YandexMap.destCoords == null){
+                        return false;
+                    }else if(YandexMap.sourceCoords == null){
+                        return false;
+                    }else{
+                        YandexMap.calculateRoute();
                     }
                 }
             )
