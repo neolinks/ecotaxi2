@@ -31,21 +31,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="personal.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="personal.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/src/personal.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.7586207">
-              <caret line="46" column="36" selection-start-line="46" selection-start-column="31" selection-end-line="46" selection-end-column="36" />
+            <state vertical-scroll-proportion="0.21453287">
+              <caret line="58" column="40" selection-start-line="58" selection-start-column="40" selection-end-line="58" selection-end-column="40" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="yandex-map.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="yandex-map.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/src/yandex-map.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.32352942">
-              <caret line="107" column="35" selection-start-line="107" selection-start-column="35" selection-end-line="107" selection-end-column="35" />
+            <state vertical-scroll-proportion="-10.551724">
+              <caret line="114" column="46" selection-start-line="0" selection-start-column="0" selection-end-line="124" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -780,18 +780,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/src/personal.js">
+    <entry file="file://$PROJECT_DIR$/resources/views/src/yandex-map.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.7586207">
-          <caret line="46" column="36" selection-start-line="46" selection-start-column="31" selection-end-line="46" selection-end-column="36" />
+        <state vertical-scroll-proportion="-10.551724">
+          <caret line="114" column="46" selection-start-line="0" selection-start-column="0" selection-end-line="124" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/src/yandex-map.js">
+    <entry file="file://$PROJECT_DIR$/resources/views/src/personal.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.32352942">
-          <caret line="107" column="35" selection-start-line="107" selection-start-column="35" selection-end-line="107" selection-end-column="35" />
+        <state vertical-scroll-proportion="0.21453287">
+          <caret line="58" column="40" selection-start-line="58" selection-start-column="40" selection-end-line="58" selection-end-column="40" />
           <folding />
         </state>
       </provider>
