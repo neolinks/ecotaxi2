@@ -1,7 +1,7 @@
 <template>
     <div class="personal-page">
         <div class="col-md-6">
-            <form class="form-horizontal">
+            <form class="form-horizontal" submit.trigger="submitOrder()">
                 <!-- -->
                 <div class="col-md-12 shortcuts">
                     <div class="col-md-1 col-md-offset-9 airport"><a><img src="img/8.png"></a></div>
@@ -37,12 +37,12 @@
                 </div>
                 <div class="form-group col-md-12">
                     <require from="./templates/datetime-picker"></require>
-                    <date-picker value.bind="source-time"></date-picker >
+                    <date-picker time.two-way="stime"></date-picker>
                     <!--<input class="form-control col-md-12" type="text" placeholder="Сейчас" id="source-time" value.bind="sourceTime"/>-->
                 </div>
                 <div class="form-group col-md-12">
                     <label for="phone" class="control-label order-label col-md-4">Телефон</label>
-                    <input class="form-control  order-input col-md-12" type="tel" placeholder="Телефон" id="phone" value.bind="phone"/>
+                    <input class="form-control  order-input col-md-12" type="tel" placeholder="Телефон" data-mask="+7(999) 999 99 99" id="phone" value.bind="phone" />
                 </div>
                 <div class="form-group col-md-12">
                     <label for="passenger" class="control-label order-label col-md-4">Пассажир</label>

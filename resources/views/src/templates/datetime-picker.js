@@ -4,10 +4,9 @@ import {datepicker} from 'bootstrap-datetimepicker';
 
 
 @inject(Element)
-@bindable("value")
 export class DatePicker {
     @bindable format = "DD-MMM-YYYY HH:mm";
-
+    @bindable time;
     constructor(element) {
         this.element = element;
     }
@@ -19,7 +18,8 @@ export class DatePicker {
             locale : 'ru',
         });
         this.datePicker.on("dp.change", (e) => {
-            this.value = moment(e.date).format(this.format);
+            this.time = moment(e.date).format(this.format);
+            console.log(this.dateTime);
         });
     }
 }

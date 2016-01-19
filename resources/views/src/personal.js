@@ -1,4 +1,4 @@
-import {inject,ObserverLocator} from 'aurelia-framework';
+import {inject,ObserverLocator,bindable} from 'aurelia-framework';
 import {HttpClient} from 'aurelia-fetch-client';
 import {YandexMap} from 'yandex-map';
 import 'fetch';
@@ -7,7 +7,7 @@ import $ from 'jquery';
 @inject(HttpClient,ObserverLocator,YandexMap)
 export class Personal{
 
-
+    @bindable stime = '';
     //get sourceAddress(){return this.sourceAddress}
     //set sourceAddress(sourceAddress){this.sourceAddress = sourceAddress}
     //orderParams =[
@@ -33,15 +33,12 @@ export class Personal{
         this.subscription = [];
         this.sourceAddress ='';
         this.destAddress ='';
-        this.sourceTime ='';
+        this.stime ='';
         this.phone ='';
         this.passenger ='';
         this.comment = '';
     }
     activate(){
-        $(function($){
-            $("#date").mask("99/99/9999",{placeholder:"mm/dd/yyyy"});
-        });
         this.subscription.push(
             this.observerLocator.getObserver(this,'sourceAddress').subscribe(
                 (newValue,oldValue) => {
@@ -79,6 +76,7 @@ export class Personal{
         this.subscription.push(
             this.observerLocator.getObserver(YandexMap,'sourceCoords').subscribe(
                 (newValue,oldValue) => {
+                    console.log(this.phone);
                    if(YandexMap.sourceCoords == null){
                        YandexMap.map.geoObjects.remove(YandexMap.route);
                        return false;
@@ -108,15 +106,36 @@ export class Personal{
         );
     }
     clearForm(){
-        this.sourceAddress ='';
-        this.destAddress ='';
-        this.sourceTime ='';
-        this.phone ='';
-        this.passenger ='';
-        this.comment = '';
+        this.sourceAddress = '';
+        this.destAddress = '';
+        console.log(this.stime);
+        this.stime = null;
+        this.phone = null;
+        this.passenger =null;
+        this.comment = null;
         YandexMap.removePlacemark(0);
     }
     deactivate () {
         //while (this.subscriptions.length) { this.subscriptions.pop()(); }
+    }
+    submitOrder(){
+        console.log(YandexMap.sourceCoords + '='+this.sourceAddress);
+        console.log(YandexMap.destCoords + '='+this.destAddress);
+        console.log(this.stime);
+        this.phone = this.phonePars($("#phone").val());
+
+        console.log(this.phone);
+        console.log(this.passenger);
+        console.log(this.comment);
+    }
+    phonePars(maskedPhone){
+        var regexp = "^\\+7\\([7]\\d{2}\\) \\d{3} \\d{2} \\d{2}";
+        if(maskedPhone.match(regexp)){
+            console.log('success num')
+            return true;
+        }else{
+            console.log('failed num');
+            return false;
+        }
     }
 }
