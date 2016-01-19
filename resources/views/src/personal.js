@@ -1,9 +1,9 @@
-import {inject} from 'aurelia-framework';
+import {inject,ObserverLocator} from 'aurelia-framework';
 import {HttpClient} from 'aurelia-fetch-client';
 import {YandexMap} from 'yandex-map';
-import {ObserverLocator} from 'aurelia-framework';
 import 'fetch';
 import 'bootstrap';
+import $ from 'jquery';
 @inject(HttpClient,ObserverLocator,YandexMap)
 export class Personal{
 
@@ -39,11 +39,16 @@ export class Personal{
         this.comment = '';
     }
     activate(){
+        $(function($){
+            $("#date").mask("99/99/9999",{placeholder:"mm/dd/yyyy"});
+        });
         this.subscription.push(
             this.observerLocator.getObserver(this,'sourceAddress').subscribe(
                 (newValue,oldValue) => {
-                    if(newValue == null){
+                    if(newValue.length == 0){
+                        console.log('ABS');
                         YandexMap.removePlacemark(1);
+                        YandexMap.sourceCoords = null;
                         return false;
                     }else if(newValue !== oldValue){
                         YandexMap.reverseGeocode(1,newValue).then((response) =>{
@@ -57,8 +62,10 @@ export class Personal{
         this.subscription.push(
             this.observerLocator.getObserver(this, 'destAddress').subscribe(
                 (newValue,oldValue) => {
-                    if(newValue == null){
+                    if(newValue.length == 0){
+                        console.log('ABD');
                         YandexMap.removePlacemark(2);
+                        YandexMap.destCoords = null;
                         return false;
                     }else if(newValue !== oldValue){
                         YandexMap.reverseGeocode(2,newValue).then((response) =>{
@@ -73,8 +80,10 @@ export class Personal{
             this.observerLocator.getObserver(YandexMap,'sourceCoords').subscribe(
                 (newValue,oldValue) => {
                    if(YandexMap.sourceCoords == null){
+                       YandexMap.map.geoObjects.remove(YandexMap.route);
                        return false;
                    }else if(YandexMap.destCoords == null){
+                       YandexMap.map.geoObjects.remove(YandexMap.route);
                        return false;
                    }else{
                        YandexMap.calculateRoute();
@@ -86,8 +95,10 @@ export class Personal{
             this.observerLocator.getObserver(YandexMap,'destCoords').subscribe(
                 (newValue,oldValue) => {
                     if(YandexMap.destCoords == null){
+                        YandexMap.map.geoObjects.remove(YandexMap.route);
                         return false;
                     }else if(YandexMap.sourceCoords == null){
+                        YandexMap.map.geoObjects.remove(YandexMap.route);
                         return false;
                     }else{
                         YandexMap.calculateRoute();
@@ -106,6 +117,6 @@ export class Personal{
         YandexMap.removePlacemark(0);
     }
     deactivate () {
-        while (this.subscriptions.length) { this.subscriptions.pop()(); }
+        //while (this.subscriptions.length) { this.subscriptions.pop()(); }
     }
 }

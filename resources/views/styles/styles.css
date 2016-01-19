@@ -565,35 +565,34 @@ label.toggle-btn.success{
   background-color: #fff;
   border-radius: 6px;
 }
-.personal-page > div > form > .form-group > label{
-  font: bold 15px 'Exo2Regular';
-  padding-top: 10px;
-  padding-right: 0;
-  color:#2D9133;
-  text-align: left;
-}
-.personal-page > div > form > .form-group > input{
+
+input.order-input{
   width: 65%;
   font: normal 16px 'Exo2Regular';
   height: 40px;
   border:none;
 }
-
+label.order-label{
+  font: bold 15px 'Exo2Regular';
+  padding-top: 10px !important;
+  padding-right: 0;
+  color:#2D9133;
+  text-align: left !important;
+}
 .shortcuts  .train{
   margin-left:10px;
 }
 .shortcuts a{
   cursor: pointer;
 }
-
-.open > .dropdown-menu{
+.train.open > .dropdown-menu{
   border-radius: 20px;
 }
-.dropdown-menu{
+.train .dropdown-menu{
   min-width: 100px !important;
   border:2px solid #2D9133 !important;
 }
-.dropdown-menu li{
+.train .dropdown-menu li{
   text-align: center;
   margin: 5px 0;
   color: #2D9242;
@@ -602,8 +601,12 @@ label.toggle-btn.success{
   text-align: center;
   font: bold 17px 'Exo2Regular';
 }
-.dropdown-menu li:hover{
+.train .dropdown-menu li:hover{
   text-decoration: underline;
+}
+
+#datetimepicker4 .dropdown-menu{
+  border:2px solid #2D9133 !important;
 }
 .clear-order{
   cursor: pointer;
@@ -625,6 +628,15 @@ label.toggle-btn.success{
   margin-top: 25px;
 }
 /*CONTENT ENDS HERE*/
+
+
+
+
+
+
+
+
+
 .content{
   border: 7px solid #F4AE12;
   border-radius: 35px;

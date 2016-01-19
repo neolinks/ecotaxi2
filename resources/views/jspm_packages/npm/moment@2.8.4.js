@@ -1,0 +1,1 @@
+module.exports = require("npm:moment@2.8.4/moment.js");
