@@ -753,6 +753,11 @@ label.order-label{
   color: blue;
   font-weight: bold;
 }
+.pages-wrapper{
+  background-color: #FFFFFF;
+  margin: 20px 192px;
+  border-radius: 10px;
+}
 /*CONTENT ENDS HERE*/
 
 
