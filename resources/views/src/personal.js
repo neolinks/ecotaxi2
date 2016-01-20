@@ -2,11 +2,12 @@ import {inject,ObserverLocator,bindable} from 'aurelia-framework';
 import {HttpClient, json} from 'aurelia-fetch-client';
 import {YandexMap} from 'yandex-map';
 import {Cookie} from 'aurelia-cookie';
+import {User} from 'model/User';
 import config from 'config';
 import 'fetch';
 import 'bootstrap';
 import $ from 'jquery';
-@inject(HttpClient,ObserverLocator,YandexMap)
+@inject(HttpClient,ObserverLocator,YandexMap,User)
 export class Personal{
 
     @bindable stime = '';
@@ -18,10 +19,13 @@ export class Personal{
         this.http = HttpClient;
         this.observerLocator = ObserverLocator;
         this.map = YandexMap;
+        this.user = User;
         this.subscription = [];
         this.errors = [];
     }
     activate(){
+        console.log(User.id);
+        console.log(User.token);
         this.sourceAddress = '';
         this.destAddress = '';
         this.stime = '';

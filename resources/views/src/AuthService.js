@@ -18,9 +18,9 @@ export class AuthService{
         this.session = JSON.parse(localStorage[config.tokenName] || null);
     }
 
-    login(username, password, local_password){
+    login(username, password, local_password,modal){
         let city = Cookie.get('city');
-        this.http
+        return this.http
             .fetch(config.loginUrl, {
                 method : 'post',
                 body : json({login : username, password : password, local_password : local_password, city : city})
@@ -33,8 +33,11 @@ export class AuthService{
                     localStorage[config.tokenName] = JSON.stringify(client.token);
                     this.session = client.token;
                     console.log(this.session);
-                    console.log(this.user);
+                    User.id = client.id;
+                    User.token = client.token;
+                    modal.modal('hide');
                     this.app.setRoot('ecotaxi-personal');
+                    return true;
                 }else{
                     console.log('Auth error');
                     return 'Неправильный логин или пароль';

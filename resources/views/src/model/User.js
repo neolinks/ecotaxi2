@@ -2,13 +2,13 @@
  * Created by ernar on 13-Jan-16.
  */
 export class User{
-    id;
-    name;
-    company;
-    address;
-    number;
-    phones;
-    token;
+    static id;
+    static name;
+    static company;
+    static address;
+    static number;
+    static phones;
+    static token;
 
     set id(id){ this.id = id; }
     get id() { return this.id; }
