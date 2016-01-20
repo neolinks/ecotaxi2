@@ -1,6 +1,8 @@
 import {inject,ObserverLocator,bindable} from 'aurelia-framework';
-import {HttpClient} from 'aurelia-fetch-client';
+import {HttpClient, json} from 'aurelia-fetch-client';
 import {YandexMap} from 'yandex-map';
+import {Cookie} from 'aurelia-cookie';
+import config from 'config';
 import 'fetch';
 import 'bootstrap';
 import $ from 'jquery';
@@ -8,37 +10,24 @@ import $ from 'jquery';
 export class Personal{
 
     @bindable stime = '';
-    //get sourceAddress(){return this.sourceAddress}
-    //set sourceAddress(sourceAddress){this.sourceAddress = sourceAddress}
-    //orderParams =[
-    //     {name : 'source-address', displayName : 'Адрес подачи', value : this.sourceAddress},
-    //     {name : 'dest-adress', displayName : 'Адрес назначения', value : this.destAddress},
-    //     {name : 'source-time', displayName : 'Время', value : this.sourceTime},
-    //     {name : 'phone', displayName : 'Телефон', value : this.phone},
-    //     {name : 'passenger', displayName : 'Пассажир', value : this.passenger},
-    //     {name : 'comment', displayName : 'Комментарий', value : this.comment}
-    //];
-    //params = {
-    //    sourceAddress: {name: 'source-address', displayName: 'Адрес подачи', value: ''},
-    //    destAddress: {name: 'dest-address', displayName: 'Адрес назначения', value: ''},
-    //    sourceTime: {name: 'source-time', displayName: 'Время', value: ''},
-    //    phone: {name: 'phone', displayName: 'Телефон', value: ''},
-    //    passanger: {name: 'passenger', displayName: 'Пассажир', value: ''},
-    //    comment: {name: 'comment', displayName: 'Комментарий', value: ''}
-    //};
+    @bindable order_id = '';
     constructor(HttpClient,ObserverLocator,YandexMap){
+        HttpClient.configure(http =>{
+            http.withBaseUrl(config.baseUrl);
+        });
         this.http = HttpClient;
         this.observerLocator = ObserverLocator;
         this.map = YandexMap;
         this.subscription = [];
-        this.sourceAddress ='';
-        this.destAddress ='';
-        this.stime ='';
-        this.phone ='';
-        this.passenger ='';
-        this.comment = '';
+        this.errors = [];
     }
     activate(){
+        this.sourceAddress = '';
+        this.destAddress = '';
+        this.stime = '';
+        this.phone = null;
+        this.passenger = '';
+        this.comment = '';
         this.subscription.push(
             this.observerLocator.getObserver(this,'sourceAddress').subscribe(
                 (newValue,oldValue) => {
@@ -76,7 +65,6 @@ export class Personal{
         this.subscription.push(
             this.observerLocator.getObserver(YandexMap,'sourceCoords').subscribe(
                 (newValue,oldValue) => {
-                    console.log(this.phone);
                    if(YandexMap.sourceCoords == null){
                        YandexMap.map.geoObjects.remove(YandexMap.route);
                        return false;
@@ -105,36 +93,71 @@ export class Personal{
             )
         );
     }
+    deactivate () {
+        while (this.subscription.length) { this.subscription.pop(); }
+    }
     clearForm(){
         this.sourceAddress = '';
         this.destAddress = '';
-        console.log(this.stime);
         this.stime = null;
         this.phone = null;
         this.passenger =null;
         this.comment = null;
+        this.errors = [];
         YandexMap.removePlacemark(0);
     }
-    deactivate () {
-        //while (this.subscriptions.length) { this.subscriptions.pop()(); }
-    }
-    submitOrder(){
-        console.log(YandexMap.sourceCoords + '='+this.sourceAddress);
-        console.log(YandexMap.destCoords + '='+this.destAddress);
-        console.log(this.stime);
-        this.phone = this.phonePars($("#phone").val());
 
-        console.log(this.phone);
-        console.log(this.passenger);
-        console.log(this.comment);
+    submitOrder(){
+        let city = Cookie.get('city');
+        this.errors = [];
+        if(!Array.isArray(YandexMap.sourceCoords)){
+            this.errors.push('Не указан правильный адрес подачи');
+        }
+        if(!Array.isArray(YandexMap.destCoords)){
+            this.errors.push('Не указан правильный адрес назначения');
+        }
+        if(this.stime == ''){
+            this.errors.push('Необходимо заполнить поле Время подачи.');
+        }
+        if(!this.phonePars($("#phone").val())){
+            this.errors.push('Номер телефона заполнен некорректно.');
+        }else{
+            this.phone = '87079941102';
+        }
+        if(this.passenger == ''){
+            this.errors.push('Необходимо заполнить поле Пассажир');
+        }
+        if(this.errors.length == 0){
+            $('#loader-wrapper').css('display','block');
+            this.http.fetch(config.createOrderUrl,{
+                method:'post',
+                body : json({
+                    source_coords : YandexMap.sourceCoords,
+                    dest_coords : YandexMap.destCoords,
+                    stime : this.stime,
+                    phone : this.phone,
+                    passenger : this.passenger,
+                    comment : this.comment,
+                    city : city})
+            }).then((response) => response.json())
+              .then((response) => {
+                    if(response){
+                        this.order_id = response;
+                        $('#loader-wrapper').css('display','none');
+                        $("#parent_popup").css('display','block');
+                        $('.myClass').animate({'left':'40%'},550);
+                        this.clearForm();
+                    }
+                    console.log(response);
+              })
+
+        }
     }
     phonePars(maskedPhone){
-        var regexp = "^\\+7\\([7]\\d{2}\\) \\d{3} \\d{2} \\d{2}";
+        var regexp = "^[8]\\([7]\\d{2}\\) \\d{3}-\\d{4}";
         if(maskedPhone.match(regexp)){
-            console.log('success num')
             return true;
         }else{
-            console.log('failed num');
             return false;
         }
     }

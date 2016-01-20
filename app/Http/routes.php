@@ -17,3 +17,5 @@ $app->get('/', function () use ($app) {
 
 $app->get('/authenticate', 'ApiController@authenticate');
 $app->post('/authenticate', 'ApiController@authenticate');
+$app->post('/create_order', 'ApiController@createOrder');
+$app->post('/send_mail', 'ApiController@sendMail');

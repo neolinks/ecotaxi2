@@ -1,0 +1,19 @@
+<template>
+    <div id="parent_popup" style="display:none">
+        <div id="myblock" class="myClass">
+            <span style="float: right; margin-right: 10px; margin-top: 10px; cursor: pointer"><a id="open-close" click.trigger="close()"><img style="width: 40px;;" src="img/close.png" /></a></span>
+            <div style="width: 300px; margin: auto;">
+                <p style="margin-top: 30px; margin-left: 40px; margin-bottom: 30px; text-align: center; font-size: 28px; color: #2D9131; font-weight: 500; line-height: 0;">Спасибо!</p>
+                <p style="text-align: center; font-size: 18px; line-height: 0;">Ваш заказ был принят.</p>
+                <p style="text-align: center; font-size: 24px; color: #2D9131;">Номер вашего заказа:</p>
+                <p id="nomer_zakaza_f" style="font-size: 40px; text-align: center; line-height: 0; font-weight: 600; margin:40px 0;">${order_id}</p>
+                <p style="text-align: center; font-size: 18px; line-height: 1; color: #848685;">Вы можете сохранить номер вашего заказа на своей почте.</p>
+                <form submit.trigger="sendMail()">
+                    <input value.bind="email" id="nomer_telefona" type="text" placeholder="Введите ваш e-mail" style="color: #000000; width: 200px; height: 45px; font-size: 18px; border-radius: 10px; margin: 0 50px; border: 2px solid #2D9133; text-align: center;" /><br />
+                    <input id="sohranit_zakaz" type="submit" name="sohranit_zakaz" value="СОХРАНИТЬ" style="background-color: #2D9133; cursor: pointer; color: #FFFFFF; width: 200px; height: 50px; font-size: 20px; border-radius: 10px; margin: 10px 50px 20px 50px;"/>
+                </form>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</template>

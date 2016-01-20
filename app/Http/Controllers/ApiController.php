@@ -42,4 +42,28 @@ class ApiController extends Controller{
     }
     return json_encode(false);
   }
+
+  public function createOrder(Request $request){
+    $source_coords = $request->get('source_coords');
+    $dest_coords = $request->get('dest_coords');
+    $source_time = $request->get('stime');
+    $phone = $request->get('phone');
+    $passenger = $request->get('passenger');
+    $comment = $request->has('comment') ? $request->get('comment') : null;
+    $tm = new TMBase($this->city);
+    if(isset($source_coords) && isset($dest_coords) && isset($source_time) && isset($phone) && isset($passenger)){
+      return json_encode(1522685);
+    }else{
+      return json_encode(false);
+    }
+  }
+  public function sendMail(Request $request){
+    $email = $request->get('email');
+    $order_id = $request->get('order_id');
+    if(isset($email) && isset($order_id)){
+      return json_encode(true);
+    }else{
+      return json_encode(false);
+    }
+  }
 }

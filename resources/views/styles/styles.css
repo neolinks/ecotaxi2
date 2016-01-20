@@ -627,6 +627,132 @@ label.order-label{
 #YMapsID{
   margin-top: 25px;
 }
+
+.errors-block{
+  background-color: #FFFFFF;
+  border-radius: 20px;
+}
+.errors-block img{
+  margin: 10px 0;
+}
+.errors-block ul{
+  margin: 10px 0;
+}
+.errors-block ul li{
+  color: #FF0000;
+  line-height: 20px;
+  text-align: left;
+  font-weight: bold;
+  vertical-align: middle;
+}
+/*SPINNER FOR AJAX LOADING*/
+#loader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  background: rgba(99, 99, 99, 0.8);
+  z-index: 9999998;
+  display: none;
+}
+#loader {
+  display: block;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #3498db;
+  -webkit-animation: spin 2s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
+  animation: spin 2s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
+}
+
+#loader:before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #e74c3c;
+  -webkit-animation: spin 3s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
+  animation: spin 3s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
+}
+
+#loader:after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #f9c922;
+  -webkit-animation: spin 1.0s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
+  animation: spin 1.0s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
+}
+
+@-webkit-keyframes spin {
+  0%   {
+    -webkit-transform: rotate(0deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: rotate(0deg);  /* IE 9 */
+    transform: rotate(0deg);  /* Firefox 16+, IE 10+, Opera */
+  }
+  100% {
+    -webkit-transform: rotate(360deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: rotate(360deg);  /* IE 9 */
+    transform: rotate(360deg);  /* Firefox 16+, IE 10+, Opera */
+  }
+}
+@keyframes spin {
+  0%   {
+    -webkit-transform: rotate(0deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: rotate(0deg);  /* IE 9 */
+    transform: rotate(0deg);  /* Firefox 16+, IE 10+, Opera */
+  }
+  100% {
+    -webkit-transform: rotate(360deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: rotate(360deg);  /* IE 9 */
+    transform: rotate(360deg);  /* Firefox 16+, IE 10+, Opera */
+  }
+}
+/*SPINNER ENDS HERE*/
+
+#parent_popup, #parent_popup2, #parent_popup3, #parent_popup4 {
+  background: rgba(99, 99, 99, 0.8);
+  height: 100%;
+  position: fixed;
+  width: 100%;
+  z-index: 99999999;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+#myblock, #myblock2, #myblock3, #myblock4{
+  width:340px;
+  background:#FFFFFF;
+  position:fixed;
+  top: 20%;
+  left: 0;
+  z-index: 99999;
+  line-height: 1;
+  border-radius: 20px;
+}
+
+#open-close, #open-close2, #open-close3{
+  cursor: pointer;
+  color: blue;
+  font-weight: bold;
+}
 /*CONTENT ENDS HERE*/
 
 
