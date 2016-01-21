@@ -1,5 +1,30 @@
 <template>
-    <div class="col-md-8 col-md-2-offset pages-wrapper">
-        <h1>Current ORDERS</h1>
+    <div class="col-md-10 text-center col-md-2-offset current-orders pages-wrapper">
+        <div class="errors-block" if.bind="errors">
+            <h2>${errors}</h2>
+        </div>
+        <div class="col-md-12">
+            <h2>Текущие заказы</h2>
+            <table class="table" if.bind="orders.length > 0">
+                <thead>
+                    <tr>
+                        <th>Номер</th>
+                        <th>Время создания</th>
+                        <th>Время подачи</th>
+                        <th>Адрес подачи</th>
+                        <th>Адрес назначения</th>
+                        <th>Пассажир</th>
+                        <th>Комментарий</th>
+                        <th>Состояние заказа</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr repeat.for="order of orders">
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            <h4 if.bind="orders.length==0">Нет текущих заказов</h4>
+        </div>
     </div>
 </template>

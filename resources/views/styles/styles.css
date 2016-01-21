@@ -632,6 +632,9 @@ label.order-label{
   background-color: #FFFFFF;
   border-radius: 20px;
 }
+.errors-block h2{
+  color:#FF0000;
+}
 .errors-block img{
   margin: 10px 0;
 }
@@ -757,6 +760,51 @@ label.order-label{
   background-color: #FFFFFF;
   margin: 20px 192px;
   border-radius: 10px;
+}
+.about-client-main{
+  width: 1000px;
+  margin:20px auto;
+}
+
+.about-client-main h2{
+  color: #FFFFFF;
+  font-weight: bold;
+}
+.company_info table{
+  margin: 10px 180px;
+  border: 2px solid #2D9133;
+}
+.company_info table tr{
+  border: 2px solid #2D9133;
+}
+.company_info table tr th{
+  font-weight: bold;
+}
+.company_info table tr:last-child th{
+  vertical-align: middle;
+}
+.company_info table tr:last-child td{
+  padding-bottom: 0;
+  font-size: 17px;
+}
+.company_info table tr td{
+  border: 2px solid #2D9133;
+}
+.company_info table tr td p{
+  line-height: 10px;
+}
+
+.current-orders.pages-wrapper{
+  margin:20px 100px;
+}
+.current-orders h4{
+  margin-top: 20px;
+}
+.history.pages-wrapper{
+  margin:20px 100px;
+}
+.history h4{
+  margin-top: 20px;
 }
 /*CONTENT ENDS HERE*/
 

@@ -6,10 +6,10 @@ use App\Libs\TMBase;
 use App\Libs\Almaty;
 use App\Libs\Astana;
 use Illuminate\Http\Request;
-
+use App\Http\Controllers\Controller;
 class ApiController extends Controller{
   public function __construct(Request $request){
-    if($request->get('city') == 'Astana'){
+    if($request->get('city') == 'Astana' || $request->get('city') == 2){
       $this->city = new Astana();
     }else{
       $this->city = new Almaty();
@@ -33,6 +33,7 @@ class ApiController extends Controller{
         $client->address = $client_info->address;
         $client->phones = $client_info->phones;
         $client->token = md5($client->id.$client->name);
+        $request->session()->put('token', $client->token);
         return json_encode($client);
       }else
         return json_encode(false);
@@ -61,6 +62,19 @@ class ApiController extends Controller{
     $order_id = $request->get('order_id');
     if(isset($email) && isset($order_id)){
       return json_encode(true);
+    }else{
+      return json_encode(false);
+    }
+  }
+  public function getToken(Request $request){
+    return $request->session->get('token');
+  }
+  public function currentOrders(Request $request,$id){
+    if(empty($id))
+      return json_encode(false);
+    $result = $this->tm->getCurrentOrders($id);
+    if(is_array($result)){
+      return json_encode($result);
     }else{
       return json_encode(false);
     }

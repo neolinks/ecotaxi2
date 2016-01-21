@@ -1,9 +1,15 @@
-import {User} from 'model/User';
+import {AuthService} from 'AuthService';
 import {inject} from 'aurelia-framework';
 import  $ from 'jquery';
 
-@inject(User)
+@inject(AuthService)
 export class EcotaxiPersonal{
+    constructor(AuthService){
+        this.user = AuthService.session;
+    }
+    getClientInfo(){
+        return `Личный кабинет / Клиент - ${this.user.company} / ${this.user.name}`;
+    }
     configureRouter(config, router) {
         config.title = 'Экотакси';
         config.map([

@@ -3,5 +3,6 @@ export default {
     loginUrl : 'authenticate',
     createOrderUrl : 'create_order',
     tokenName : 'ah12h3',
-    sendMailUrl : "send_mail"
+    sendMailUrl : "send_mail",
+    currentOrdersUrl : "current_orders/"
 }

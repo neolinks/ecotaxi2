@@ -19,3 +19,5 @@ $app->get('/authenticate', 'ApiController@authenticate');
 $app->post('/authenticate', 'ApiController@authenticate');
 $app->post('/create_order', 'ApiController@createOrder');
 $app->post('/send_mail', 'ApiController@sendMail');
+$app->get('/token','ApiController@getToken');
+$app->get('/current_orders/{id}','ApiController@currentOrders');

@@ -21,6 +21,7 @@
     <div class="container">
         <div class="row main-wrapper">
             <div class="personal-wrapper">
+                <div class="about-client-main"><h2 class="text-center">${getClientInfo()}</h2></div>
                 <require from='./templates/nav-bar'></require>
                 <nav-bar router.bind="router"></nav-bar>
                 <router-view></router-view>

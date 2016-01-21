@@ -56,12 +56,12 @@ $app->singleton(
 */
 
  $app->middleware([
-   App\Http\Middleware\CorsMiddleware::class,
-//     // Illuminate\Cookie\Middleware\EncryptCookies::class,
-//     // Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
-//     // Illuminate\Session\Middleware\StartSession::class,
-//     // Illuminate\View\Middleware\ShareErrorsFromSession::class,
-//     // Laravel\Lumen\Http\Middleware\VerifyCsrfToken::class,
+       App\Http\Middleware\CorsMiddleware::class,
+       Illuminate\Cookie\Middleware\EncryptCookies::class,
+       Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
+       Illuminate\Session\Middleware\StartSession::class,
+       Illuminate\View\Middleware\ShareErrorsFromSession::class,
+       //Laravel\Lumen\Http\Middleware\VerifyCsrfToken::class,
  ]);
 
 // $app->routeMiddleware([
@@ -93,7 +93,7 @@ $app->singleton(
 | can respond to, as well as the controllers that may handle them.
 |
 */
-
+Dotenv::load(__DIR__.'/../');
 $app->group(['namespace' => 'App\Http\Controllers'], function ($app) {
     require __DIR__.'/../app/Http/routes.php';
 });

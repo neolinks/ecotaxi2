@@ -5,16 +5,15 @@ import {User} from 'model/User';
 import config from 'config';
 import 'bootstrap';
 
-@inject(Aurelia, HttpClient,User)
+@inject(Aurelia, HttpClient)
 export class AuthService{
 
-    constructor(Aurelia, HttpClient,User){
+    constructor(Aurelia, HttpClient){
         HttpClient.configure(http =>{
            http.withBaseUrl(config.baseUrl);
         });
         this.http = HttpClient;
         this.app = Aurelia;
-        this.user = User;
         this.session = JSON.parse(localStorage[config.tokenName] || null);
     }
 
@@ -26,15 +25,10 @@ export class AuthService{
                 body : json({login : username, password : password, local_password : local_password, city : city})
             })
             .then((response) => response.json())
-            .then((client) => {
-                console.log(client);
-                if(client){
-                    this.user = client;
-                    localStorage[config.tokenName] = JSON.stringify(client.token);
-                    this.session = client.token;
-                    console.log(this.session);
-                    User.id = client.id;
-                    User.token = client.token;
+            .then((session) => {
+                if(session){
+                    localStorage[config.tokenName] = JSON.stringify(session);
+                    this.session = session;
                     modal.modal('hide');
                     this.app.setRoot('ecotaxi-personal');
                     return true;

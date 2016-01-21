@@ -1,5 +1,28 @@
 <template>
-    <div class="col-md-8 col-md-2-offset pages-wrapper">
-        <h1>HISTORY</h1>
+    <div class="col-md-10 text-center col-md-2-offset history pages-wrapper">
+        <require from="./datetimepicker"></require>
+        <div class="col-md-12">
+            <h2>История заказов за период</h2>
+            <table class="table" if.bind="orders.length > 0">
+                <thead>
+                <tr>
+                    <th>Номер</th>
+                    <th>Время создания</th>
+                    <th>Время подачи</th>
+                    <th>Адрес подачи</th>
+                    <th>Адрес назначения</th>
+                    <th>Пассажир</th>
+                    <th>Комментарий</th>
+                    <th>Состояние заказа</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr repeat.for="order of orders">
+                    <td></td>
+                </tr>
+                </tbody>
+            </table>
+            <h4 if.bind="orders.length==0">По Вашему запросу ничего не найдено!</h4>
+        </div>
     </div>
 </template>

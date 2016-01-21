@@ -138,4 +138,15 @@ class TMBase {
     public function update_order(array $params){
         return json_decode($this->call_post('update_order',$params));
     }
+    public function getCurrentOrders($client_id){
+        $q_p = [
+            'client_id' => (int)$client_id,
+        ];
+        $response = json_decode($this->call_get('get_current_orders',$q_p));
+        if($response->code == 0){
+            return $response->data->orders;
+        }else{
+            return false;
+        }
+    }
 } 

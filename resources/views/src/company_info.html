@@ -1,7 +1,26 @@
 <template>
 
-        <div class="col-md-8 col-md-2-offset pages-wrapper">
-            <h1>COMPANY INFO</h1>
+        <div class="col-md-8 col-md-2-offset pages-wrapper company_info">
+            <div class="col-md-6">
+                <table class="table">
+                    <tr>
+                        <th>Имя компании</th>
+                        <td>${user.company}</td>
+                    </tr>
+                    <tr>
+                        <th>Номер договора</th>
+                        <td>${user.number}</td>
+                    </tr>
+                    <tr>
+                        <th>Адрес</th>
+                        <td>${user.address}</td>
+                    </tr>
+                    <tr>
+                        <th>Телефон</th>
+                        <td><p repeat.for="phone of user.phones">${phone}<br/></p></td>
+                    </tr>
+                </table>
+            </div>
         </div>
 
 </template>
