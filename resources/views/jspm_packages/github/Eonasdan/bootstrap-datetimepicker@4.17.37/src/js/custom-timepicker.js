@@ -238,17 +238,20 @@
 
             getTimePickerMainTemplate = function () {
                 var middleRow = $('<tr>')
+
                 if (isEnabled('h')) {
+
                     middleRow.append($('<td>')
-                        .append($('<span>').addClass('timepicker-hour').attr({'data-time-component':'hours', 'title': options.tooltips.pickHour}).attr('data-action', 'showHours')));
+                        .append($('<input>').addClass('timepicker-hour').attr({'data-time-component':'hours', 'title': options.tooltips.pickHour})));
 
                 }
                 if (isEnabled('m')) {
                     if (isEnabled('h')) {
                         middleRow.append($('<td>').addClass('separator').html(':'));
                     }
+
                     middleRow.append($('<td>')
-                        .append($('<span>').addClass('timepicker-minute').attr({'data-time-component': 'minutes', 'title': options.tooltips.pickMinute}).attr('data-action', 'showMinutes')));
+                        .append($('<input>').addClass('timepicker-minute').attr({'data-time-component': 'minutes', 'title': options.tooltips.pickMinute})));
 
                 }
                 if (isEnabled('s')) {
