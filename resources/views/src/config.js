@@ -4,5 +4,7 @@ export default {
     createOrderUrl : 'create_order',
     tokenName : 'ah12h3',
     sendMailUrl : "send_mail",
-    currentOrdersUrl : "current_orders/"
+    currentOrdersUrl : "current_orders/",
+    historyUrl : "history",
+    feedbackUrl : "feedback"
 }

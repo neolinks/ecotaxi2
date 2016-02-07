@@ -149,4 +149,13 @@ class TMBase {
             return false;
         }
     }
+    public function get_history($data){
+        $res = $this->call_get('get_finished_orders',$data);
+        $res = json_decode($res);
+        if($res->code == 0){
+            return $res->data->orders;
+        }else{
+            return false;
+        }
+    }
 } 

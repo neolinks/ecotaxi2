@@ -1,9 +1,16 @@
 <template>
+    <div id="loader-wrapper" if.bind="loading">
+        <div id="loader"></div>
+    </div>
+    <require from="./state-format"></require>
     <div class="col-md-10 text-center col-md-2-offset history pages-wrapper">
-        <require from="./datetimepicker"></require>
         <div class="col-md-12">
-            <h2>История заказов за период</h2>
-            <table class="table" if.bind="orders.length > 0">
+            <h2 class="text-center">История заказов за период</h2>
+            <p class="danger" if.bind="errors.length != 0">${errors}</p>
+            <require from="./templates/datetime-range"></require>
+            <datetime-range tbegin.two-way="begin" tend.two-way="end"></datetime-range>
+            <button type="button" click.trigger="show()" class="bg-green history-btn">Показать</button>
+            <table class="table orders-table" if.bind="orders.length > 0">
                 <thead>
                 <tr>
                     <th>Номер</th>
@@ -18,11 +25,18 @@
                 </thead>
                 <tbody>
                 <tr repeat.for="order of orders">
-                    <td></td>
+                    <td>${order.id}</td>
+                    <td>${parseTime(order.start_time)}</td>
+                    <td>${parseTime(order.source_time)}</td>
+                    <td>${order.source}</td>
+                    <td>${order.destination}</td>
+                    <td>${order.passenger}</td>
+                    <td>${order.passenger}</td>
+                    <td>${order.state_id | stateFormat}</td>
                 </tr>
                 </tbody>
             </table>
-            <h4 if.bind="orders.length==0">По Вашему запросу ничего не найдено!</h4>
+            <h4 if.bind="emptyResult">По Вашему запросу ничего не найдено!</h4>
         </div>
     </div>
 </template>

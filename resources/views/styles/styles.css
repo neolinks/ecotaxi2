@@ -658,7 +658,6 @@ label.order-label{
   z-index: 1000;
   background: rgba(99, 99, 99, 0.8);
   z-index: 9999998;
-  display: none;
 }
 #loader {
   display: block;
@@ -805,6 +804,85 @@ label.order-label{
 }
 .history h4{
   margin-top: 20px;
+}
+.date-time-range{
+  margin: 10px 0 35px 19%;
+  padding:0px;
+}
+.date-time-range input{
+  height: 40px;
+  font-size: 16px;
+  margin-right: 20px;
+}
+.date-time-range label{
+  font-size: 16px;
+  color: #000;
+}
+.bg-green{
+  background-color: #2D9133;
+}
+.history-btn{
+  padding: 6px 30px;
+  border-radius: 14px;
+  border: none;
+  font-size: 20px;
+  color: white;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.danger{
+  background-color: white;
+  color: red;
+  font-weight: 600;
+}
+.orders-table{
+  border: solid #2D9136;
+}
+.orders-table thead tr th {
+  text-align: center;
+}
+.orders-table th{
+  background-color: #2D9136;
+  color: #FFFFFF;
+}
+.orders-table tr,.orders-table,.orders-table td {
+  vertical-align: middle;
+  text-align: center;
+  font-size: 13px;
+  border:solid;
+  border-color:#2D9136;
+}
+.orders-table tbody tr td{
+  vertical-align: middle !important;
+}
+.border-green{
+  border:2px solid #2D9136 !important;
+}
+.border-green-radius{
+  border:2px solid #2D9136 !important;
+  border-radius: 10px !important;
+}
+.padding-none{
+  padding: 0 !important;
+}
+.feedback-form input{
+  height: 40px;
+  border-radius: 0 10px 10px 0;
+  border:none;
+  font-size: 16px;
+}
+.feedback-form label{
+  color:#2D9136;
+  vertical-align: middle;
+  margin-top: 10px;
+  font-size: 16px;
+}
+.feedback-form .form-group{
+  margin-bottom: 40px;
+}
+.feedback-textarea{
+  font-size: 16px;
+  margin-bottom: 30px;
 }
 /*CONTENT ENDS HERE*/
 

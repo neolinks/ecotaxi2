@@ -16,13 +16,14 @@ export class DatePicker {
             format: this.format,
             showClose: true,
             locale : 'ru',
+            useCurrent : true,
+            collapse : true,
+            sideBySide : true,
+            allowInputToggle: true,
         });
         this.datePicker.on("dp.change", (e) => {
             this.time = moment(e.date).format(this.format);
             console.log(this.time);
-        });
-        this.datePicker.on("dp.show", (e) => {
-            setTimeout(e,3000)
         });
     }
 }

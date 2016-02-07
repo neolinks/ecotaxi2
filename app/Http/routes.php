@@ -21,3 +21,5 @@ $app->post('/create_order', 'ApiController@createOrder');
 $app->post('/send_mail', 'ApiController@sendMail');
 $app->get('/token','ApiController@getToken');
 $app->get('/current_orders/{id}','ApiController@currentOrders');
+$app->post('/history','ApiController@history');
+$app->post('/feedback','ApiController@feedback');

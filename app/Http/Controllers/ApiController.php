@@ -79,4 +79,28 @@ class ApiController extends Controller{
       return json_encode(false);
     }
   }
+
+  public function history(Request $request){
+    $begin = $request->get('begin');
+    $end = $request->get('end');
+    $id = $request->get('id');
+    $data = [
+      'client_id'=>$id,
+      'start_time'=>$begin,
+      'finish_time'=>$end
+    ];
+    $res = $this->tm->get_history($data);
+    return response()->json($res);
+  }
+
+  public function feedback(Request $request){
+    $hasName = $request->has('name');
+    $hasEmail = $request->has('email');
+    $hasComment = $request->has('comment');
+
+    if($hasName && $hasEmail && $hasComment)
+      return response()->json(true);
+    else
+      return response()->json(false);
+  }
 }

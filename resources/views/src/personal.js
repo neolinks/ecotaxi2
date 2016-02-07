@@ -22,6 +22,7 @@ export class Personal{
         this.map = YandexMap;
         this.subscription = [];
         this.errors = [];
+        this.loading = false;
     }
     activate(){
         this.sourceAddress = '';
@@ -130,7 +131,7 @@ export class Personal{
             this.errors.push('Необходимо заполнить поле Пассажир');
         }
         if(this.errors.length == 0){
-            $('#loader-wrapper').css('display','block');
+            this.loading = true;
             this.http.fetch(config.createOrderUrl,{
                 method:'post',
                 body : json({
@@ -145,7 +146,7 @@ export class Personal{
               .then((response) => {
                     if(response){
                         this.order_id = response;
-                        $('#loader-wrapper').css('display','none');
+                        this.loading = false;
                         $("#parent_popup").css('display','block');
                         $('.myClass').animate({'left':'40%'},550);
                         this.clearForm();

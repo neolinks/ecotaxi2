@@ -1,5 +1,23 @@
 <template>
+    <div id="loader-wrapper" if.bind="loading">
+        <div id="loader"></div>
+    </div>
     <div class="col-md-8 col-md-2-offset pages-wrapper">
-        <h1>FEEDBACK</h1>
+        <h2 class="text-center">Оставьте свой отзыв</h2>
+        <p class="danger text-center" if.bind="errors.length != 0">${errors}</p>
+        <div class="col-md-6 feedback-form">
+            <div class="col-md-12 padding-none form-group border-green-radius">
+                <label class="col-md-3">E-Mail</label>
+                <input class="col-md-9" type="email" value.bind="email" placeholder="E-mail">
+            </div>
+            <div class="col-md-12 padding-none form-group border-green-radius">
+                <label class="col-md-3">Имя</label>
+                <input class="col-md-9" type="text" value.bind="name" placeholder="Ваше имя">
+            </div>
+            <button type="button" click.trigger="send()" class="bg-green history-btn col-md-12">Отправить</button>
+        </div>
+        <div class="col-md-6">
+            <textarea value.bind="comment" placeholder="Комментарий" class="col-md-12 feedback-textarea border-green-radius" rows="10"></textarea>
+        </div>
     </div>
 </template>

@@ -1,11 +1,15 @@
 <template>
+    <div id="loader-wrapper" if.bind="loading">
+        <div id="loader"></div>
+    </div>
+    <require from="./state-format"></require>
     <div class="col-md-10 text-center col-md-2-offset current-orders pages-wrapper">
         <div class="errors-block" if.bind="errors">
             <h2>${errors}</h2>
         </div>
         <div class="col-md-12">
             <h2>Текущие заказы</h2>
-            <table class="table" if.bind="orders.length > 0">
+            <table class="table orders-table" if.bind="orders.length > 0">
                 <thead>
                     <tr>
                         <th>Номер</th>
@@ -20,7 +24,14 @@
                 </thead>
                 <tbody>
                     <tr repeat.for="order of orders">
-                        <td></td>
+                        <td>${order.id}</td>
+                        <td>${parseTime(order.start_time)}</td>
+                        <td>${parseTime(order.source_time)}</td>
+                        <td>${order.source}</td>
+                        <td>${order.destination}</td>
+                        <td>${order.passenger}</td>
+                        <td>${order.comment}</td>
+                        <td>${order.state_id | stateFormat}</td>
                     </tr>
                 </tbody>
             </table>
@@ -28,3 +39,8 @@
         </div>
     </div>
 </template>
+87756667331
+егзеков
+батырбаев
+сатаев
+койшибаев
